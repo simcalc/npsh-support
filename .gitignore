@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+outputs/
+.env
+.env.*
+*.cas.h5
+*.dat.h5

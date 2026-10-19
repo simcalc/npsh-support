@@ -1,0 +1,329 @@
+{
+  "schemaVersion": "untirta.support-resources.v1",
+  "checkedAt": "2026-10-19",
+  "assetIntegrityNote": "Metadata inventory only. Verify downloaded bytes against the original pinned SHA256SUMS/manifest before use. A GitHub null digest is unavailable, never inferred.",
+  "modules": [
+    {
+      "path": "modules/OpenFoam",
+      "repository": "simcalc/OpenFoam",
+      "commit": "bd0fefb59b79589e4a3cc56fc5b04c24cbec024a",
+      "sourceFiles": [
+        {
+          "path": "README.md",
+          "sha256": "de99ff19c5ed6a98e1cf5e43220c3bdaa1c6af6523694911d46ebf479475715e"
+        },
+        {
+          "path": "release-manifest.json",
+          "sha256": "853199ead7c87252295e85f319029936e51bf99446f0746c6b78bfa2fe39c172"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "cavity-laminar-re100-v3-evidence",
+          "id": 409426292,
+          "url": "https://github.com/simcalc/OpenFoam/releases/tag/cavity-laminar-re100-v3-evidence",
+          "assets": [
+            {
+              "id": 629823922,
+              "name": "outer-github-artifact.zip",
+              "bytes": 11962029,
+              "githubDigest": "sha256:ba69797ddc8eed3b7a13f9a41f8640da38b945ae90a2cbc323cc73a8ce379cf6",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/cavity-laminar-re100-v3-evidence/outer-github-artifact.zip"
+            }
+          ]
+        },
+        {
+          "tag": "cavity-laminar-re100-v2-evidence",
+          "id": 409408395,
+          "url": "https://github.com/simcalc/OpenFoam/releases/tag/cavity-laminar-re100-v2-evidence",
+          "assets": [
+            {
+              "id": 629758965,
+              "name": "outer-github-artifact.zip",
+              "bytes": 12581502,
+              "githubDigest": "sha256:6be2b69493a81d5f3323663bcd1c743046cab12aa9ed97d1ad05c4f1b5ae7988",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/cavity-laminar-re100-v2-evidence/outer-github-artifact.zip"
+            }
+          ]
+        },
+        {
+          "tag": "cavity-laminar-re100-v1-evidence",
+          "id": 409396355,
+          "url": "https://github.com/simcalc/OpenFoam/releases/tag/cavity-laminar-re100-v1-evidence",
+          "assets": [
+            {
+              "id": 629710685,
+              "name": "outer-github-artifact.zip",
+              "bytes": 9011148,
+              "githubDigest": "sha256:f1e3f20b041cdd5112f9c923718e814c4f2dc352c70b11f23d77b2d52edfd7fb",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/cavity-laminar-re100-v1-evidence/outer-github-artifact.zip"
+            }
+          ]
+        },
+        {
+          "tag": "openfoam12-20250206",
+          "id": 408858191,
+          "url": "https://github.com/simcalc/OpenFoam/releases/tag/openfoam12-20250206",
+          "assets": [
+            {
+              "id": 627630862,
+              "name": "COPYING",
+              "bytes": 35646,
+              "githubDigest": "sha256:a62f4262b9739f43478d025ed9fc5419585ec27b4b50e88f55e3186141e18ef1",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/openfoam12-20250206/COPYING"
+            },
+            {
+              "id": 627630888,
+              "name": "INSTALL.md",
+              "bytes": 3075,
+              "githubDigest": "sha256:0d48709d3496cacd5223541392b713e9b5c595e65cc4a9a2ec5882009930a778",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/openfoam12-20250206/INSTALL.md"
+            },
+            {
+              "id": 627630944,
+              "name": "INVENTORY.json",
+              "bytes": 6743859,
+              "githubDigest": "sha256:b0ebb0f9bcef8b0faede6375f808a0cee1a1187d7a9ff6bdc282822eb658d1e2",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/openfoam12-20250206/INVENTORY.json"
+            },
+            {
+              "id": 627630998,
+              "name": "INVENTORY.md",
+              "bytes": 1023,
+              "githubDigest": "sha256:e72b2f34ad52b1c7eae47dc41184b20b72bc592850433fd1eecde85362a58c60",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/openfoam12-20250206/INVENTORY.md"
+            },
+            {
+              "id": 627630721,
+              "name": "openfoam12_20250206-corresponding-source.tar.gz",
+              "bytes": 71228570,
+              "githubDigest": "sha256:7f44960b18f2b1f2f9c07b1f74451547530a27ed0fd2abdfe097d382ac51bbc0",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/openfoam12-20250206/openfoam12_20250206-corresponding-source.tar.gz"
+            },
+            {
+              "id": 627630487,
+              "name": "openfoam12_20250206_amd64.deb",
+              "bytes": 112877506,
+              "githubDigest": "sha256:b3dcd9a636a5a827bf43ffcf0156922ba6db492123f035eae1046ee759602dd1",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/openfoam12-20250206/openfoam12_20250206_amd64.deb"
+            },
+            {
+              "id": 627631079,
+              "name": "RELEASE-NOTES.md",
+              "bytes": 438,
+              "githubDigest": "sha256:3942bf87546a4935a50638acd95fc49b8c3c644c13dc91e258b0292e049c5c82",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/openfoam12-20250206/RELEASE-NOTES.md"
+            },
+            {
+              "id": 627631024,
+              "name": "RELEASE.json",
+              "bytes": 726,
+              "githubDigest": "sha256:39f1c96733c6c5e554e3723f530f174576c4fe120f7198ea6df0ff6fcaf4c272",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/openfoam12-20250206/RELEASE.json"
+            },
+            {
+              "id": 627631054,
+              "name": "SHA256SUMS",
+              "bytes": 683,
+              "githubDigest": "sha256:e0980524aee2650c51c2bbbe581d36ad18fd2e216e12c6d8e83cd25dedfde85b",
+              "url": "https://github.com/simcalc/OpenFoam/releases/download/openfoam12-20250206/SHA256SUMS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "modules/PyAnsys",
+      "repository": "simcalc/PyAnsys",
+      "commit": "2c9a6bb0bb8d13aba3738599d97bd9809542b558",
+      "sourceFiles": [
+        {
+          "path": "README.md",
+          "sha256": "9d877a426ae85d05a1d86b5fb577170a19635fa36405c65ef2f003919bde09be"
+        },
+        {
+          "path": "requirements.txt",
+          "sha256": "8faf139b0b27ffac5a83985b4c2485779f3189eeecbba7bc6136810dbadd5f88"
+        }
+      ],
+      "releases": [
+        {
+          "tag": "pyfluent-sdk-0.42.2-cpython312-linux-x64",
+          "id": 409546185,
+          "url": "https://github.com/simcalc/PyAnsys/releases/tag/pyfluent-sdk-0.42.2-cpython312-linux-x64",
+          "assets": [
+            {
+              "id": 630250022,
+              "name": "ansys_fluent_core-0.42.2-py3-none-any.whl",
+              "bytes": 6830802,
+              "githubDigest": "sha256:4f7b703b311820d17bdf1cd93394790a844b60f2a40dd8259f6154a16e9c9efc",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/pyfluent-sdk-0.42.2-cpython312-linux-x64/ansys_fluent_core-0.42.2-py3-none-any.whl"
+            },
+            {
+              "id": 630250018,
+              "name": "INSTALL.txt",
+              "bytes": 663,
+              "githubDigest": "sha256:b6e642051d4e8a8946a4b286fa157401d3cb8334ffe9e1c5bb01fe53918b2a68",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/pyfluent-sdk-0.42.2-cpython312-linux-x64/INSTALL.txt"
+            },
+            {
+              "id": 630250019,
+              "name": "offline-verification.json",
+              "bytes": 803,
+              "githubDigest": "sha256:3c7bd2f9d58be6d36e1c0ca6527c0cf7383d963f14e22c29e99376ec6fe551b1",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/pyfluent-sdk-0.42.2-cpython312-linux-x64/offline-verification.json"
+            },
+            {
+              "id": 630250016,
+              "name": "pyfluent-sdk-0.42.2-cpython312-linux-x64.zip",
+              "bytes": 47835491,
+              "githubDigest": "sha256:69aa469cb50a524dd92d4fc400d13ebaa2135dec9c7ebda77f81a89d31531f7b",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/pyfluent-sdk-0.42.2-cpython312-linux-x64/pyfluent-sdk-0.42.2-cpython312-linux-x64.zip"
+            },
+            {
+              "id": 630250038,
+              "name": "requirements-resolved.txt",
+              "bytes": 3827,
+              "githubDigest": "sha256:22bf56cff79ac6f63f37d042802205102ef8bad63d73e747d5ae23c4df7168d1",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/pyfluent-sdk-0.42.2-cpython312-linux-x64/requirements-resolved.txt"
+            },
+            {
+              "id": 630250040,
+              "name": "sdk-verification.json",
+              "bytes": 3898,
+              "githubDigest": "sha256:41856beee1118ca935f83a965f3affc20802d29ca7febf79a099789bbb7e7381",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/pyfluent-sdk-0.42.2-cpython312-linux-x64/sdk-verification.json"
+            },
+            {
+              "id": 630250023,
+              "name": "SHA256SUMS",
+              "bytes": 655,
+              "githubDigest": "sha256:83f87dbf1fe42f51ff058089ad391a74ef0bd7c364429deb23dbc27874cbd511",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/pyfluent-sdk-0.42.2-cpython312-linux-x64/SHA256SUMS"
+            },
+            {
+              "id": 630250042,
+              "name": "wheel-manifest.json",
+              "bytes": 29385,
+              "githubDigest": "sha256:313a53c16748a4ada32b8c4bb52c6e84fe3d2b327554a47b6d17a526119f3832",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/pyfluent-sdk-0.42.2-cpython312-linux-x64/wheel-manifest.json"
+            }
+          ]
+        },
+        {
+          "tag": "frozen-rotor-mesh-review-38152095914",
+          "id": 409756736,
+          "url": "https://github.com/simcalc/PyAnsys/releases/tag/frozen-rotor-mesh-review-38152095914",
+          "assets": [
+            {
+              "id": 631115875,
+              "name": "mesh-inspection.json",
+              "bytes": 92717,
+              "githubDigest": "sha256:7c33b681d30be88ad2c5396d27e4990d34cf2463e28ab546ce52d01a27ff65e4",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-mesh-review-38152095914/mesh-inspection.json"
+            },
+            {
+              "id": 631115881,
+              "name": "SHA256SUMS",
+              "bytes": 87,
+              "githubDigest": "sha256:b62ab633d715ca55fcb9ac4ddc1f86d6a32c976b3dfb95a59e8c1852e64771fa",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-mesh-review-38152095914/SHA256SUMS"
+            }
+          ]
+        },
+        {
+          "tag": "frozen-rotor-learning-20261011",
+          "id": 409718353,
+          "url": "https://github.com/simcalc/PyAnsys/releases/tag/frozen-rotor-learning-20261011",
+          "assets": [
+            {
+              "id": 630955133,
+              "name": "example-provenance.json",
+              "bytes": 5393,
+              "githubDigest": "sha256:f501f3d3413294acb57cd487f0e38729e16fabcaef98ead5de367bc5fd12c89a",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-learning-20261011/example-provenance.json"
+            },
+            {
+              "id": 630955163,
+              "name": "EXAMPLE_DATA_LICENSE.txt",
+              "bytes": 1114,
+              "githubDigest": "sha256:46617266d39d9ecdd829d29ef6e9a237e9312e71531ddc258e2303e28ab041db",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-learning-20261011/EXAMPLE_DATA_LICENSE.txt"
+            },
+            {
+              "id": 630955128,
+              "name": "frozen-rotor-learning-20261011.zip",
+              "bytes": 40574440,
+              "githubDigest": "sha256:1644ccdf820fd97fc3eb44a7faf42b98c7c7d7e81920739b3ff47a376c9fc3de",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-learning-20261011/frozen-rotor-learning-20261011.zip"
+            },
+            {
+              "id": 630955136,
+              "name": "frozen_rotor_workflow.zip",
+              "bytes": 34935,
+              "githubDigest": "sha256:7c2a8aec9be706bc3ce35113b84e63ec5d55e6ab8a3cf8aa24650fcc0a053ca6",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-learning-20261011/frozen_rotor_workflow.zip"
+            },
+            {
+              "id": 630955135,
+              "name": "README-learning.txt",
+              "bytes": 1779,
+              "githubDigest": "sha256:4421a51c4483827637ee2896d099551b299cf0cba5b20c97e89789240fbb73af",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-learning-20261011/README-learning.txt"
+            },
+            {
+              "id": 630955129,
+              "name": "SHA256SUMS",
+              "bytes": 465,
+              "githubDigest": "sha256:c01c5b3eb785fae2f54d560edb4213a50102a72bf58739c2df380c8aa04208ca",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-learning-20261011/SHA256SUMS"
+            }
+          ]
+        },
+        {
+          "tag": "frozen-rotor-boundaries-38155649489",
+          "id": 409784402,
+          "url": "https://github.com/simcalc/PyAnsys/releases/tag/frozen-rotor-boundaries-38155649489",
+          "assets": [
+            {
+              "id": 631224734,
+              "name": "EXAMPLE_DATA_LICENSE.txt",
+              "bytes": 1114,
+              "githubDigest": "sha256:46617266d39d9ecdd829d29ef6e9a237e9312e71531ddc258e2303e28ab041db",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-boundaries-38155649489/EXAMPLE_DATA_LICENSE.txt"
+            },
+            {
+              "id": 631224730,
+              "name": "frozen-rotor-boundaries.zip",
+              "bytes": 6385711,
+              "githubDigest": "sha256:c1481ce15abcfb7d2336f366c73dd3565a9ea26dfbcc174d8c2c5b26708457e2",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-boundaries-38155649489/frozen-rotor-boundaries.zip"
+            },
+            {
+              "id": 631224732,
+              "name": "README-boundaries.txt",
+              "bytes": 1773,
+              "githubDigest": "sha256:937d25c8ac87592672ca558317a806c17c696e45ac2c67cc8f568ef642fcdd8c",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-boundaries-38155649489/README-boundaries.txt"
+            },
+            {
+              "id": 631224736,
+              "name": "SHA256SUMS",
+              "bytes": 360,
+              "githubDigest": "sha256:efb64933b41345ac39109d88aaa7d2a7ecde6ea1ffedc995dda34e62335fff80",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-boundaries-38155649489/SHA256SUMS"
+            },
+            {
+              "id": 631224737,
+              "name": "topology-report.json",
+              "bytes": 68245,
+              "githubDigest": "sha256:1dc7cebaeac04506dcfbe9da3ce123f149cc94cb44c6990b9b11c3f4195d2595",
+              "url": "https://github.com/simcalc/PyAnsys/releases/download/frozen-rotor-boundaries-38155649489/topology-report.json"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceHashBasis": "SHA256 of the exact pinned Git blob. Allowlisted text working copies may convert LF to CRLF; other byte changes are refused."
+}

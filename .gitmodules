@@ -1,0 +1,6 @@
+[submodule "modules/OpenFoam"]
+	path = modules/OpenFoam
+	url = https://github.com/simcalc/OpenFoam.git
+[submodule "modules/PyAnsys"]
+	path = modules/PyAnsys
+	url = https://github.com/simcalc/PyAnsys.git
