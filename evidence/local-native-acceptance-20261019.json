@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "untirta.local-native-acceptance.v1",
+  "date": "2026-10-19",
+  "timeZone": "Asia/Jakarta",
+  "scope": "Native educational solver installation and bounded numerical smoke only; no exact-pump, physical validation or hosted native job-service claim.",
+  "status": "CLEAN_WITHIN_NATIVE_EDUCATIONAL_SCOPE",
+  "platform": {
+    "wslVersion": "3.0.3.0",
+    "ubuntu": "24.04.5 LTS",
+    "wslVersionForDistribution": 2,
+    "kernel": "6.18.54.1-microsoft-standard-WSL2",
+    "systemd": true,
+    "cgroupV2": true
+  },
+  "software": {
+    "openfoam": "Foundation 12",
+    "packageVersion": "20250206",
+    "packageSha256": "b3dcd9a636a5a827bf43ffcf0156922ba6db492123f035eae1046ee759602dd1",
+    "ubuntuArchiveSha256": "bb415d824822c4b878125729af451a5d18fb13d1cf5cbed9a7393ad64ac6039e",
+    "ubuntuArchiveBytes": 388975696,
+    "ubuntuArchiveSource": "https://releases.ubuntu.com/24.04.5/ubuntu-24.04.5-wsl-amd64.wsl",
+    "runtimeHubCommit": "109442a13739183b79b9c8d78a9a802aa34018b0",
+    "openFoamSourceCommit": "bd0fefb59b79589e4a3cc56fc5b04c24cbec024a",
+    "pyAnsysSourceCommit": "2c9a6bb0bb8d13aba3738599d97bd9809542b558",
+    "officialTutorialSourceCommit": "0b487fc98b88d3e8dc3c3ead4662e7632dd5e7dd"
+  },
+  "runs": [
+    {
+      "profile": "transient-cavity-v1",
+      "inputRevision": "fixture-v1",
+      "inputSha256": "c6ca3ec5be966cbcdb71e9aefc25c877262c98819bb7415117ca313b7822a2a0",
+      "referenceSha256": "dd20f4b7bf25885399a43c0ab8bc9cfb48305d54e8cfe477c66bdd0d1e8c3bc6",
+      "reportSha256": "3f20cc2c63f6a3865a504b8a4f885214d601ed7448b1f18e87e7b935cfb7bd01",
+      "status": "DevelopmentBenchmarkComplete",
+      "actualCfdRun": true,
+      "numericalSmokePassed": true,
+      "engineeringValidated": false,
+      "mainApplicationWrites": false,
+      "cellCount": 400,
+      "meshPassed": true,
+      "physicalTimeSeconds": 0.05,
+      "restartPhysicalTimeSeconds": 0.055,
+      "restartExecutionCompleted": true,
+      "restartEquivalenceVerified": false,
+      "fields": {
+        "U": {
+          "minimum": -0.109118,
+          "maximum": 0.10312,
+          "scalarComponentCount": 1200,
+          "unit": "m/s (vector components)"
+        },
+        "p": {
+          "minimum": -0.00971541,
+          "maximum": 0.0107122,
+          "scalarComponentCount": 400,
+          "unit": "m2/s2 (kinematic pressure)"
+        }
+      },
+      "sourceInputUnchanged": true,
+      "referenceUnchanged": true,
+      "allNativeStagesExitZero": true,
+      "nativeStages": [
+        "blockMesh",
+        "checkMesh",
+        "foamRun",
+        "restart-foamRun"
+      ],
+      "outputBytes": 442656,
+      "resources": {
+        "uidNonroot": true,
+        "memoryMaxBytes": 536870912,
+        "memoryPeakBytes": 198070272,
+        "cpuMax": "100000 100000",
+        "pidsMax": 32,
+        "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "solverChildGroupsRemaining": 0
+      },
+      "actualRestartExecutionVerified": false
+    },
+    {
+      "profile": "cavitation-bullet-v1",
+      "inputRevision": "fixture-v3",
+      "inputSha256": "6925a9c6e3cdcf90fe0f9c6da7ce7f75a3bfb25a171aac46778d9847384a3455",
+      "referenceSha256": "bd258b8a3466838e9f2040a825bc844d7abc9a7f7a144efe31adda4458755b5e",
+      "reportSha256": "7844c8de647031d8c185c2e3f5c6e398a77849ca53d07cea999d2e3e8556c02d",
+      "status": "DevelopmentBenchmarkComplete",
+      "actualCfdRun": true,
+      "numericalSmokePassed": true,
+      "engineeringValidated": false,
+      "mainApplicationWrites": false,
+      "cellCount": 11089,
+      "meshPassed": true,
+      "physicalTimeSeconds": 1e-05,
+      "restartPhysicalTimeSeconds": null,
+      "restartExecutionCompleted": false,
+      "restartEquivalenceVerified": false,
+      "fields": {
+        "U": {
+          "minimum": -9.82872,
+          "maximum": 25.2264,
+          "scalarComponentCount": 33267,
+          "unit": "m/s (vector components)"
+        },
+        "p_rgh": {
+          "minimum": 2197.78,
+          "maximum": 416165.0,
+          "scalarComponentCount": 11089,
+          "unit": "Pa (hydrostatic-reduced pressure)"
+        },
+        "alpha.water": {
+          "minimum": 0.994562,
+          "maximum": 1.0,
+          "scalarComponentCount": 11089,
+          "unit": "1 (liquid fraction)"
+        }
+      },
+      "sourceInputUnchanged": true,
+      "referenceUnchanged": true,
+      "allNativeStagesExitZero": true,
+      "nativeStages": [
+        "blockMesh",
+        "snappyHexMesh",
+        "checkMesh",
+        "potentialFoam",
+        "foamRun"
+      ],
+      "outputBytes": 6664349,
+      "resources": {
+        "uidNonroot": true,
+        "memoryMaxBytes": 1073741824,
+        "memoryPeakBytes": 242700288,
+        "cpuMax": "100000 100000",
+        "pidsMax": 32,
+        "memoryEvents": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+        "solverChildGroupsRemaining": 0
+      },
+      "actualRestartExecutionVerified": false
+    }
+  ],
+  "remaining": [
+    "Authenticated hosted job submission and durable queue/status/cancel/artifact delivery",
+    "Exact-pump geometry and quantitative physics acceptance",
+    "Independent physical measurements and uncertainty",
+    "Large-study and desktop response/load benchmarks",
+    "Native Fluent remains unavailable"
+  ],
+  "mainEngineeringChanged": false,
+  "studentInputChanged": false
+}

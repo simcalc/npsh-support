@@ -31,10 +31,18 @@ during application calculations.
 - Online NPSHr and Transient L1/L2 calculations run in their independent Python
   services. Both CFD workbenches provide input validation and evidence reduction.
 - This hub is source/evidence support, not an online solver service.
-- The inspected Windows laptop has no WSL/OpenFOAM or native Fluent. Its
-  installed PyFluent client alone cannot run CFD.
+- The inspected Windows laptop now has WSL2, Ubuntu 24.04.5 and the pinned
+  Foundation 12 package. Both fixed cavity/restart and cavitation-bullet native
+  benchmarks completed under an unprivileged bounded worker.
+  [Local native acceptance](evidence/local-native-acceptance-20261019.json)
+  records the exact source pins, archive hashes, numerical smoke and resource scope.
+- Native Fluent remains unavailable. The PyFluent client alone cannot run Fluent.
 - Native jobs need a separate bounded worker. No arbitrary user jobs are sent
   to GitHub Actions. Development workflows remain at their original repositories.
+- The native CLI worker is ready for these reviewed examples. Online native
+  job submission, authentication, queue/status/cancel and artifact delivery
+  are not enabled by installing WSL; the online Labs retain their existing
+  independent Python calculations.
 - Physical validation awaits measurements with compatible pump configuration,
   operating conditions, units, pressure/datum basis and uncertainty.
 

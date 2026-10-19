@@ -37,8 +37,46 @@ python3 -B tools/cfd_worker/run.py --benchmark transient-cavity-v1 \
 Use one common workspace root per worker. The worker rejects unavailable
 resource enforcement. The disk watchdog is not a filesystem hard quota.
 Create `cancel.request` only in the active job directory to cancel it.
-Native Linux execution and resource acceptance have not been run on the
-inspected Windows laptop, which currently has no WSL installation.
+On 19 October 2026 the inspected Windows laptop completed native acceptance
+with WSL 3.0.3.0, kernel 6.18.54.1 and Ubuntu 24.04.5 LTS. The pinned
+Foundation 12 `20250206` package and both source submodules were verified.
+The worker ran as the locked, unprivileged `untirta-cfd` system account.
+The package setup used root only for system installation; solver jobs did not.
+
+| Reviewed example | Native result | Applied cap | Observed cgroup peak |
+| --- | --- | --- | --- |
+| `transient-cavity-v1` | 400 cells; mesh OK; solve to 0.05 s; native checkpoint continuation to 0.055 s completed | 512 MiB, one CPU, 32 tasks | 198070272 bytes (188.9 MiB) |
+| `cavitation-bullet-v1` | 11089 cells; mesh OK; solve to 0.00001 s; finite fields and bounded liquid fraction | 1 GiB, one CPU, 32 tasks | 242700288 bytes (231.5 MiB) |
+
+Both examples report `DevelopmentBenchmarkComplete`, `actualCfdRun: true`,
+`numericalSmokePassed: true`, unchanged input/reference and
+`engineeringValidated: false`. No remaining solver child cgroups or OOM events
+were observed at the end of either job. Cgroup `memory.peak` is the reported
+aggregate peak; the systemd CLI's smaller exit summary is not substituted for it.
+The example caps are below the worker's existing 2 GiB ceiling. No large-case,
+thermal, full desktop latency, restart-equivalence or exact-pump acceptance is
+inferred from these small native runs.
+
+The source receipt is [local-native-acceptance-20261019.json](../evidence/local-native-acceptance-20261019.json).
+The Linux runtime uses the immutable hub commit
+`109442a13739183b79b9c8d78a9a802aa34018b0`; subsequent documentation updates
+do not silently change that runtime or its pinned modules.
+
+### Setup issues resolved during acceptance
+
+The initial Windows `wsl --install --web-download` transfer ended with
+`WININET_E_CONNECTION_ABORTED`. The official Ubuntu archive was subsequently
+downloaded with resume support, exact size and SHA-256 verification, then
+installed with `wsl --install --from-file ... --version 2 --no-launch`.
+No unchecked or partial archive was installed.
+
+The local wrapper initially sourced the vendor shell profile with Bash
+`errexit` enabled. Disable `errexit` and `nounset` only while sourcing the
+unchanged `/opt/openfoam12/etc/bashrc`, capture its return code, restore the
+strict wrapper settings, then require successful initialization, exact version
+and all required executables before running. Generated Linux shell files must
+use LF; the syntax preflight caught one Windows CRLF helper before execution.
+Vendor solver files and scientific models were not patched.
 
 Fluent remains optional. PyFluent 0.42.2 is a client SDK; native Fluent,
 compatible runtime, a legitimate licensed session, exact reviewed case,
