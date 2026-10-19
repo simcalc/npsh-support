@@ -18,7 +18,7 @@ python -B tools/worker_preflight.py
 | [modules/PyAnsys](modules/PyAnsys) | Pinned PyFluent SDK, learning meshes and frozen-rotor development evidence | Client readiness does not establish a licensed Fluent session |
 | [catalog/resources.lock.json](catalog/resources.lock.json) | Exact commits, source-manifest hashes and release asset index | GitHub asset digests are recorded only when GitHub supplies them |
 | [docs/native-worker.md](docs/native-worker.md) | Local native execution and online worker prerequisites | Native execution is separate from cloud Python calculations |
-| [docs/github-cfd-preparation.json](docs/github-cfd-preparation.json) | Prepared Codespaces environment and Actions job adapter | Local contract acceptance; production integration and new native cloud runs remain pending |
+| [docs/github-cfd-preparation.json](docs/github-cfd-preparation.json) | Prepared Codespaces environment and Actions job adapter | Both native Actions benchmarks verified; Codespaces provisioned and tested; public production compute remains pending |
 | [validation](validation) | Empty measurement template and physical validation protocol | No measurements have been invented |
 
 Submodules preserve original repositories, histories, licenses and releases.
@@ -37,13 +37,19 @@ during application calculations.
   benchmarks completed under an unprivileged bounded worker.
   [Local native acceptance](evidence/local-native-acceptance-20261019.json)
   records the exact source pins, archive hashes, numerical smoke and resource scope.
+- The manual GitHub development workflow completed both native benchmarks.
+  [Actions and Codespaces acceptance](evidence/github-cfd-live-acceptance-20261019.json)
+  records the run links, exact bindings and resource limits. A 2-core Codespace
+  provisioned OpenFOAM 12 and passed 31 tests; native execution correctly
+  stops at the missing delegated cgroup limit. The Codespace is now stopped.
 - Native Fluent remains unavailable. The PyFluent client alone cannot run Fluent.
 - Native jobs need a separate bounded worker. No arbitrary user jobs are sent
-  to GitHub Actions. Development workflows remain at their original repositories.
+  to GitHub Actions. A fixed-fixture development workflow is also available in this hub.
 - The native CLI worker is ready for these reviewed examples. Online native
-  job submission, authentication, queue/status/cancel and artifact delivery
-  are not enabled by installing WSL; the online Labs retain their existing
-  independent Python calculations.
+  session pairing, queue/status/cancel and artifact delivery are deployed as an
+  owner-device pilot in the application repository. This is not permanent student
+  account authentication or arbitrary pump CFD. The independent Python Lab
+  calculations remain available without the native worker.
 - Physical validation awaits measurements with compatible pump configuration,
   operating conditions, units, pressure/datum basis and uncertainty.
 

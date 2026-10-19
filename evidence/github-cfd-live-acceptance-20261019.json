@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "untirta.github-cfd-live-acceptance.v1",
+  "date": "2026-10-19",
+  "scope": "Repository development verification; fixed educational fixtures only. Not a production student compute service.",
+  "nativeActions": [
+    {
+      "profile": "transient-cavity-v1",
+      "runId": 39277877197,
+      "url": "https://github.com/simcalc/npsh-support/actions/runs/39277877197",
+      "conclusion": "success",
+      "sourceCommit": "a240330e6ba8bca1eb936b6f9e29863e3a0d449d",
+      "openfoamCommit": "bd0fefb59b79589e4a3cc56fc5b04c24cbec024a",
+      "verifiedResultSha256": "b9de9a5caaa4da37d71e8c6db7de81a861642ab4be4f047be3d9e1f1653bdb24",
+      "actualCfdRun": true,
+      "numericalSmokePassed": true,
+      "engineeringValidated": false,
+      "resourceEnforcement": {
+        "available": true,
+        "mode": "inherited-cgroup-v2",
+        "aggregateMemoryHardCap": true,
+        "singleJob": true,
+        "threads": 1,
+        "diskCap": "10-ms-watchdog-not-filesystem-hard-quota",
+        "maximumProcessesOrTasks": 32,
+        "linuxInheritedLimits": {
+          "supported": true,
+          "memoryBytes": 2147483648,
+          "maximumTasks": 32,
+          "cpuCores": 1.0,
+          "cgroup": "/sys/fs/cgroup/system.slice/untirta-development-39277877197.scope"
+        }
+      },
+      "physicalTimeSeconds": 0.05
+    },
+    {
+      "profile": "cavitation-bullet-v1",
+      "runId": 39277882304,
+      "url": "https://github.com/simcalc/npsh-support/actions/runs/39277882304",
+      "conclusion": "success",
+      "sourceCommit": "a240330e6ba8bca1eb936b6f9e29863e3a0d449d",
+      "openfoamCommit": "bd0fefb59b79589e4a3cc56fc5b04c24cbec024a",
+      "verifiedResultSha256": "e7fe0e5790ea54946571eb4afce19769f8d69ec7dbcbe2210ae9f234591e77a2",
+      "actualCfdRun": true,
+      "numericalSmokePassed": true,
+      "engineeringValidated": false,
+      "resourceEnforcement": {
+        "available": true,
+        "mode": "inherited-cgroup-v2",
+        "aggregateMemoryHardCap": true,
+        "singleJob": true,
+        "threads": 1,
+        "diskCap": "10-ms-watchdog-not-filesystem-hard-quota",
+        "maximumProcessesOrTasks": 32,
+        "linuxInheritedLimits": {
+          "supported": true,
+          "memoryBytes": 2147483648,
+          "maximumTasks": 32,
+          "cpuCores": 1.0,
+          "cgroup": "/sys/fs/cgroup/system.slice/untirta-development-39277882304.scope"
+        }
+      },
+      "physicalTimeSeconds": 1e-05
+    }
+  ],
+  "codespaces": {
+    "name": "expert-cod-x5qp4r775jp73vvwx",
+    "cores": 2,
+    "sourceCommit": "a240330e6ba8bca1eb936b6f9e29863e3a0d449d",
+    "provisioningPassed": true,
+    "testsPassed": 31,
+    "openfoamDetectedVersion": "12",
+    "nativeRunnerReady": false,
+    "reasonCode": "CFD_RESOURCE_CAP_REQUIRED",
+    "finding": "Default environment has no delegated capped cgroup. Resource verification was preserved.",
+    "finalState": "Stopped, verified in browser",
+    "paidOverageBudgetUSD": 0,
+    "billedUsageOrRemainingQuota": "Not measured; elapsed time is not a billing statement."
+  },
+  "contractTests": {
+    "windows": 31,
+    "freshLinuxCheckout": 31,
+    "liveCodespace": 31
+  },
+  "mainFollowup": {
+    "architectureFindings": 0,
+    "pumpFluidSuctionLocks": "Passed unchanged",
+    "liveTwoSessionIsolation": "Passed; session B cannot list, inspect, cancel or download session A jobs."
+  },
+  "outstanding": [
+    "Native Codespaces execution requires supported delegated resource caps.",
+    "Persistent student identity, durable account recovery and general student-input native-case adapter are not implemented.",
+    "GitHub production-hosting restrictions remain unresolved; no public student dispatch endpoint or broad CLI token was deployed.",
+    "Physical validation requires measured data."
+  ],
+  "supportMessagesSent": 0,
+  "billingChanges": 0
+}
