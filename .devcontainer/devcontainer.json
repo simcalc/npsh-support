@@ -1,0 +1,14 @@
+{
+  "name": "NPSH OpenFOAM development",
+  "build": {"dockerfile": "Dockerfile", "context": ".."},
+  "remoteUser": "vscode",
+  "hostRequirements": {"cpus": 2, "memory": "8gb", "storage": "16gb"},
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "waitFor": "postCreateCommand",
+  "forwardPorts": [],
+  "portsAttributes": {},
+  "remoteEnv": {"PYTHONDONTWRITEBYTECODE": "1"},
+  "customizations": {
+    "vscode": {"settings": {"files.eol": "\n"}}
+  }
+}

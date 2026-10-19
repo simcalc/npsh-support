@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "untirta.github-cfd-preparation.v1",
+  "date": "2026-10-19",
+  "status": "IMPLEMENTATION_PREPARED_NOT_PRODUCTION_ENABLED",
+  "acceptanceEvidence": "evidence/github-cfd-preparation-acceptance-20261019.json",
+  "userDecision": "Prepare implementation first. Do not send GitHub Support a message.",
+  "architecture": {
+    "codespaces": "Development container with Ubuntu 24.04, Python, GitHub CLI and checksum-pinned Foundation 12. No public application server or privileged container configuration.",
+    "actions": "One manual repository development workflow for two immutable software benchmark fixtures. Disabled unless the owner explicitly sets CFD_DEVELOPMENT_JOBS_ENABLED=true.",
+    "connector": "Server-side standard-library Python adapter: prepare, dispatch, reconcile, status, cancel and verified artifact retrieval. No HTTP endpoint is exposed.",
+    "calculationAuthority": "Unmodified pinned Python OpenFOAM worker. This adapter performs no engineering calculation and writes nothing to Main.",
+    "mainAndIndependentPythonLabs": "No runtime source, equations or routes changed by this preparation."
+  },
+  "sourceBindings": {
+    "repository": "simcalc/npsh-support",
+    "dispatchRef": "Reviewed lightweight tag cfd-dev-<40-character support commit>, verified through Git refs before dispatch.",
+    "workflow": ".github/workflows/cfd-development-job.yml",
+    "openfoamRepository": "simcalc/OpenFoam",
+    "openfoamCommit": "bd0fefb59b79589e4a3cc56fc5b04c24cbec024a",
+    "packageVersion": "20250206",
+    "packageSha256": "b3dcd9a636a5a827bf43ffcf0156922ba6db492123f035eae1046ee759602dd1",
+    "profileCatalog": "catalog/github-cfd-profiles.json",
+    "operatingSystem": "Ubuntu 24.04 image and packages receive security updates; only the solver archive and source commits are byte-pinned."
+  },
+  "jobLifecycle": [
+    "Prepare a token-free request binding: unique request ID, allowlisted case profile, exact source commit.",
+    "Verify the reviewed tag target and dispatch once; CLI creates an exclusive attempt receipt before contacting GitHub.",
+    "Persist the returned run ID where available. After uncertainty, reconcile the same ID; never automatically dispatch again.",
+    "Poll queued/running status and known stage labels. No estimated percentage is invented.",
+    "Cancellation remains requested until GitHub reports cancelled or another terminal state.",
+    "Workflow success means ResultAvailable. Only a matching validated numerical report is returned as a verified benchmark result.",
+    "Download one bounded result.json in memory. Bind request, run, source commits, fixture hashes and exact numerical flags; do not extract arbitrary archive paths."
+  ],
+  "credentialsAndIsolation": {
+    "credentialLocation": "Trusted backend process only; CLI reads GH_TOKEN from its environment. No token is stored in a request, artifact, browser or source file.",
+    "recommendedCredential": "Repository-limited GitHub App installation token: Actions write, Contents read. Installation and token issuance are not implemented or configured here.",
+    "download": "GitHub API authorization is never forwarded to artifact storage. Only one HTTPS redirect to GitHub Actions/Azure artifact storage is accepted.",
+    "source": "Checkout credentials are not persisted; public pinned submodules remain unchanged. No arbitrary commands, URLs, files, geometry or student study payloads are accepted.",
+    "limits": "30-minute workflow timeout; native worker timeout 1200 seconds, aggregate memory 2 GiB, CPU quota 100%, 32 tasks, 256 MiB workspace watchdog and bounded logs. Native execution requires delegated cgroup v2.",
+    "retention": "Uploaded result artifact retained one day. No automatic rerun or old-result fallback.",
+    "codespaces": "Post-create provisioning does not start a service or solver. A standard Codespace may lack delegated cgroup limits; installing OpenFOAM alone must not bypass that gate."
+  },
+  "developmentRunProcedureAfterReview": [
+    "Publish the reviewed support change and create its exact lightweight cfd-dev-<commit> tag. Neither publication nor tag creation has been performed by this preparation.",
+    "For repository development verification, deliberately enable CFD_DEVELOPMENT_JOBS_ENABLED. Keep the public application disconnected.",
+    "Set GITHUB_CFD_APPROVED_COMMIT in the trusted caller to that exact reviewed commit. Supply a repository-scoped token through the environment without writing it to a file or chat.",
+    "python -B tools/github_cfd_job.py prepare --request outputs/request.json --profile transient-cavity-v1 --commit <reviewed-commit>",
+    "python -B tools/github_cfd_job.py dispatch --request outputs/request.json",
+    "python -B tools/github_cfd_job.py status --request outputs/request.json",
+    "python -B tools/github_cfd_job.py result --request outputs/request.json",
+    "Optional cancellation: python -B tools/github_cfd_job.py cancel --request outputs/request.json. Poll status afterwards.",
+    "Preserve request and dispatch receipts after uncertain delivery. Do not delete the attempt marker to force an automatic retry."
+  ],
+  "remainingAcceptance": [
+    "Run the new workflow in GitHub and verify real queued/running/cancelled/completed states, delegated resource caps, artifact download/digest and numerical report for both fixtures.",
+    "Create a Codespace for actual devcontainer build/provisioning acceptance, inspect its capability report and measure real quota use. Container build and Codespace creation have not been performed locally.",
+    "Implement per-student authentication/ownership, durable job/run binding, admission control, quotas, rate limits and queue fairness before a multi-user application integration.",
+    "Build the Python adapter from actual student study inputs to a validated native case. The two fixed benchmarks do not simulate an arbitrary pump and cannot substitute for a student's result.",
+    "Integrate Lab Run/progress/results without exposing GitHub credentials. Do not alter the independent NPSHr/Transient calculation routes.",
+    "Resolve the published GitHub production-hosting constraints before activating the proposed public production backend. No support exception has been requested or obtained.",
+    "Experimental validation requires actual measured data with configuration, units, datum and uncertainty; none have been invented."
+  ],
+  "providerReferences": [
+    "https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event",
+    "https://docs.github.com/en/rest/actions/workflow-runs",
+    "https://docs.github.com/en/rest/actions/artifacts",
+    "https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers",
+    "https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features"
+  ]
+}

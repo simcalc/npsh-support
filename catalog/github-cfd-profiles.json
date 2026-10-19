@@ -1,0 +1,10 @@
+{
+  "transient-cavity-v1": {
+    "inputSha256": "c6ca3ec5be966cbcdb71e9aefc25c877262c98819bb7415117ca313b7822a2a0",
+    "referenceSha256": "dd20f4b7bf25885399a43c0ab8bc9cfb48305d54e8cfe477c66bdd0d1e8c3bc6"
+  },
+  "cavitation-bullet-v1": {
+    "inputSha256": "6925a9c6e3cdcf90fe0f9c6da7ce7f75a3bfb25a171aac46778d9847384a3455",
+    "referenceSha256": "bd258b8a3466838e9f2040a825bc844d7abc9a7f7a144efe31adda4458755b5e"
+  }
+}

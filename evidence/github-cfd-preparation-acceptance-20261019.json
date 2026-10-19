@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "untirta.github-cfd-preparation-acceptance.v1",
+  "date": "2026-10-19",
+  "status": "LOCAL_PREPARATION_ACCEPTANCE_PASSED_CLOUD_EXECUTION_PENDING",
+  "scope": "Prepared transport, request/result contracts and environment configuration; no new CFD execution or production activation.",
+  "windows": {
+    "tests": 31,
+    "passed": 31,
+    "command": "python -B -m unittest discover -s tests -v"
+  },
+  "linux": {
+    "tests": 31,
+    "passed": 31,
+    "environment": "WSL Ubuntu 24.04 fresh isolated Linux checkout with authored files copied for testing",
+    "initialMountedCheckoutFinding": "Existing OpenFoam Windows CRLF working copy appeared modified to Linux Git. Fresh LF checkout passed without weakening source verification or changing source repositories."
+  },
+  "shellSyntax": {
+    "command": "bash -n tools/install_openfoam12.sh tools/run_github_benchmark.sh .devcontainer/setup.sh",
+    "passed": true
+  },
+  "realGitHubApiProbe": {
+    "method": "GET",
+    "path": "/repos/simcalc/npsh-support/actions/workflows/support-integrity.yml",
+    "apiVersion": "2026-03-10",
+    "passed": true,
+    "newWorkflowRuns": 0
+  },
+  "mainProtectedLocks": {
+    "pump": "PASSED",
+    "fluidBasis": "PASSED",
+    "suctionNpsha": "PASSED"
+  },
+  "mainArchitecture": {
+    "status": "PENDING_EXISTING_EVIDENCE_REBASELINE",
+    "findingCount": 16,
+    "findingCode": "ARCHITECTURE_LOCK_EVIDENCE_HASH_MISMATCH",
+    "scope": "Existing native queue integration changes in npsh3, preceding this separate support repository preparation. No baseline hashes were changed."
+  },
+  "evidenceLimitations": [
+    "GitHub workflow and Codespace have not been newly launched. Docker image build and actual Codespace resource capabilities are unverified.",
+    "Status, cancellation and artifact failure cases use explicitly synthetic test fixtures. They do not establish a native cloud solve.",
+    "No student-input CFD adapter, multi-user authorization, durable classroom queue or production integration is claimed.",
+    "No experimental/physical validation is claimed."
+  ],
+  "externalMutations": {
+    "supportMessagesSent": 0,
+    "workflowDispatches": 0,
+    "codespacesCreated": 0,
+    "billingChanges": 0,
+    "commits": 0,
+    "pushes": 0,
+    "deployments": 0
+  },
+  "authoredFiles": [
+    {
+      "path": ".devcontainer/devcontainer.json",
+      "sha256": "a7c0fb045b4134f4827cb2cfaa4e3467fdb3cc717c3e4da2ffb5af8176d6c182"
+    },
+    {
+      "path": ".devcontainer/Dockerfile",
+      "sha256": "08cd85d371f83ab965ad57261bf7f5e05fb14e02b82c59497f7a49cb6a228bde"
+    },
+    {
+      "path": ".devcontainer/setup.sh",
+      "sha256": "fff89ed9d0ae1aa367b37ca214df96366ac12332e520ac44838f7c5ddd3485c3"
+    },
+    {
+      "path": ".github/workflows/cfd-development-job.yml",
+      "sha256": "18ecbe027a102245afaa0e4884b5798381c6495fbbcdfe522dccafcc09649842"
+    },
+    {
+      "path": "catalog/github-cfd-profiles.json",
+      "sha256": "41ebe13d3167bbd2c4cb0e008cb29b194d0622e7fde230c11604abf22bd19a65"
+    },
+    {
+      "path": "tools/github_cfd_job.py",
+      "sha256": "565f752476b07c8099a23a7b7715b84f22851e525396a59bd0b6247bfebdecf2"
+    },
+    {
+      "path": "tools/github_cfd_workflow.py",
+      "sha256": "4c1f0cfc85ed032a734d067ddb3c6b8baa77c3f9f41acd6edd57b7841f05d423"
+    },
+    {
+      "path": "tools/install_openfoam12.sh",
+      "sha256": "bb2a067b1ef585edf440f5ca7565c6b4de3d31e2476b7d65ac1e2bf5493654f2"
+    },
+    {
+      "path": "tools/run_github_benchmark.sh",
+      "sha256": "f695b8bc0f2c8a087d9506e0c1c21e6858330f336bb8c6540c17a86dfb97728e"
+    },
+    {
+      "path": "tests/test_github_cfd.py",
+      "sha256": "223b6b05eec9e22417a3c96e120bead126a2eeaa89de98645f1e75a8567a899c"
+    }
+  ]
+}

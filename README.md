@@ -18,6 +18,7 @@ python -B tools/worker_preflight.py
 | [modules/PyAnsys](modules/PyAnsys) | Pinned PyFluent SDK, learning meshes and frozen-rotor development evidence | Client readiness does not establish a licensed Fluent session |
 | [catalog/resources.lock.json](catalog/resources.lock.json) | Exact commits, source-manifest hashes and release asset index | GitHub asset digests are recorded only when GitHub supplies them |
 | [docs/native-worker.md](docs/native-worker.md) | Local native execution and online worker prerequisites | Native execution is separate from cloud Python calculations |
+| [docs/github-cfd-preparation.json](docs/github-cfd-preparation.json) | Prepared Codespaces environment and Actions job adapter | Local contract acceptance; production integration and new native cloud runs remain pending |
 | [validation](validation) | Empty measurement template and physical validation protocol | No measurements have been invented |
 
 Submodules preserve original repositories, histories, licenses and releases.

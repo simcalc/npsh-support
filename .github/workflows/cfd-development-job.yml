@@ -1,0 +1,59 @@
+name: CFD request development validation
+run-name: cfd-dev/${{ inputs.case_profile }}/${{ inputs.request_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        description: Unique development request ID (32 lowercase hex characters)
+        required: true
+        type: string
+      case_profile:
+        description: Fixed repository software verification fixture
+        required: true
+        type: choice
+        options:
+          - transient-cavity-v1
+          - cavitation-bullet-v1
+
+permissions:
+  contents: read
+
+# Serializes development fixtures; GitHub pending-job replacement means this
+# is not a durable, fair queue for a classroom or public application.
+concurrency:
+  group: support-cfd-development
+  cancel-in-progress: false
+
+jobs:
+  native-benchmark:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.repository.private == false && github.repository == 'simcalc/npsh-support' && vars.CFD_DEVELOPMENT_JOBS_ENABLED == 'true' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      CFD_REQUEST_ID: ${{ inputs.request_id }}
+      CFD_CASE_PROFILE: ${{ inputs.case_profile }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          submodules: recursive
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+      - name: Validate request and source
+        run: python -B -m unittest discover -s tests -v
+      - name: Install pinned OpenFOAM
+        run: bash tools/install_openfoam12.sh actions
+      - name: Run bounded native benchmark
+        run: bash tools/run_github_benchmark.sh
+      - name: Bind numerical result
+        run: python -B tools/github_cfd_workflow.py pack
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cfd-result-${{ inputs.request_id }}
+          path: outputs/result.json
+          retention-days: 1
+          if-no-files-found: error
+          compression-level: 0
